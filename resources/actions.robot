@@ -45,7 +45,11 @@ Dado que eu tenho um novo produto
     #Variavel Global mantem o arquivo ativo todo o tempo (Sommente para RPA)
     ##Set Global Variable      ${product_json}
 
-Quando faço o cadastro este produto
+Mas esta produto já foi cadastrado
+    Go To From
+    Create new product      ${product_json}
+
+Quando faço o cadastro desse produto
     Go To From
     Create new product      ${product_json}
 
@@ -53,4 +57,7 @@ Então devo ver esse item na lista
     Table Should Contain        class:table      ${product_json['title']}
 
 
-    Sleep   2
+Então devo ver a mensagem de alerta
+    [Arguments]     ${expect_alert}
+    Wait Until Element Contains         ${ALERT_DANGER}     ${expect_alert} 
+    

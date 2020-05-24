@@ -16,6 +16,12 @@ Test Teardown       After Test
 ***Test Cases***
 Novo produto
     Dado que eu tenho um novo produto       dk.json
-    Quando faço o cadastro este produto
+    Quando faço o cadastro desse produto
     Então devo ver esse item na lista
     
+Produto Duplicar
+    [Tags]      Dup
+    Dado que eu tenho um novo produto  master.json
+    Mas esta produto já foi cadastrado
+    Quando faço o cadastro desse produto
+    Então devo ver a mensagem de alerta     Oops - Este produto já foi cadastrado!

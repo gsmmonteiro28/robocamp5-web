@@ -4,19 +4,21 @@ Documentation       ProductPage
 ...                 E também suas funcionalidades
 
 ***Variables***
-${PRODUCT_ADD}  class:product-add
+${PRODUCT_ADD}      class:product-add
+${ALERT_DANGER}     class:alert-danger
 
 ***Keywords***
 Go To From
     Wait Until Element Is Visible   ${PRODUCT_ADD}
     Click Element                   ${PRODUCT_ADD}
 
-Select category     ${cat}
+Select category
+    [Arguments]     ${cat}
     Click Element   css:input[placeholder^="Gat"]
-    Wait Until Element Is Visible       xpath://li//span[text()="${'cat'}"]
+    Wait Until Element Is Visible       xpath://li//span[text()="${cat}"]
     #seleciona o item dentro do campo categoria
     Sleep   4
-    Click Element                      xpath://li//span[text()="${'cat'}"]
+    Click Element                       xpath://li//span[text()="${cat}"]
 
     
 Create new product
@@ -27,5 +29,5 @@ Create new product
     Select category     ${product_json['cat']}
 
     Input Text      css:input[name=price]       ${product_json['price']} 
-    
+
     Click Element       id:create-product
