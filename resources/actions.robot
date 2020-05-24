@@ -2,6 +2,7 @@
 Documentation       Aqui teremos todas as palavras de ação dos testes automatizados
 
 Library     SeleniumLibrary
+Library     Libs/database.py
 #Importa a funcionalidade de PageObject
 Resource    Pages/BasePage.robot
 Resource    Pages/SideBar.robot

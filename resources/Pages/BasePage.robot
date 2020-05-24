@@ -15,13 +15,14 @@ Open Session
     ##Redefine o tamanho do browser
     Set Window size     1440    900
     ##Redefine o padrão geral de tempo de aguardar elemento do Selenium
-    Set Selenium Implicit Wait  5 
+    Set Selenium Implicit Wait  6 
 
 Login Session
     [Arguments]     ${email}    ${pass}
     Open Session
+    Go To           ${base_url}/login
     #Criado uma .robot para fazer login, escondendo a função (encapsulamento) uma Keywords especial - PageObject
-    Login With  ${email}    ${pass}
+    Login With      ${email}    ${pass}
 #    Go To       http://pixel-web:3000/login
 
 #    Input Text      id:emailId      ${email}
@@ -32,11 +33,11 @@ Close Session
     Close Browser
 
 Clear Local Storage
-    Execute Javascript                  localStorage.clear();
+    Execute Javascript      localStorage.clear();
 
 After Test
     Capture page Screenshot
 
 ##Helpers
 Open Chrome
-    Open Browser        ${base_url}    Chrome     options=add_experimental_option('excludeSwitches', ['enable-logging'])
+    Open Browser        about:blank    Chrome     options=add_experimental_option('excludeSwitches', ['enable-logging'])
