@@ -5,11 +5,12 @@ Documentation   Login
 ...             Para que eu possa gerenciar os produtos da loja virtual
 
 
-Resource            ../resources/actions.robot
+Resource            ../../resources/actions.robot
 
 Suite Setup         Open Session
 Suite Teardown      Close Session
 Test Teardown       After Test
+
 
 ***Test Cases***
 Usuário autenticado
@@ -20,25 +21,25 @@ Usuário autenticado
 
     [Teardown]  Clear Local Storage
 
-Senha invalida
-    [Template]      Testativa de Login
-    papito@ninjapixel.com       abc123      Usuário e/ou senha inválidos
+#Senha invalida
+#    [Template]      Testativa de Login
+#    papito@ninjapixel.com       abc123      Usuário e/ou senha inválidos
 
-Email não cadastrado
-    [Template]      Testativa de Login
-    papito@ninjapixel.com.br        pwd123      Usuário e/ou senha inválidos
+#Email não cadastrado
+#    [Template]      Testativa de Login
+#    papito@ninjapixel.com.br        pwd123      Usuário e/ou senha inválidos
 
-Email incorreto
-    [Template]      Testativa de Login
-    papito#ninjapixel.com.br        pwd123      Usuário e/ou senha inválidos
+#Email incorreto
+#    [Template]      Testativa de Login
+#    papito#ninjapixel.com.br        pwd123      Usuário e/ou senha inválidos
 
-Email não informado
-    [Template]      Testativa de Login
-    ${EMPTY}        pwd123      Opps. Informe o seu email!
+#Email não informado
+#    [Template]      Testativa de Login
+#    ${EMPTY}        pwd123      Opps. Informe o seu email!
     
-Senha não informada
-    [Template]      Testativa de Login
-    papito@ninjapixel.com       ${EMPTY}       Opps. Informe a sua senha!
+#Senha não informada
+#    [Template]      Testativa de Login
+#    papito@ninjapixel.com       ${EMPTY}       Opps. Informe a sua senha!
 
 ***Keywords***
 Testativa de Login
