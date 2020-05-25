@@ -31,7 +31,8 @@ Então devo ver a mensagem de alerta "${expect_alert}"
     Wait Until Element Contains          ${DIV_ALERT}    ${expect_alert}
 
 ## Cadastro
-Dado que eu tenho um novo produto   ${json_file}
+Dado que eu tenho um novo produto
+    [Arguments]     ${json_file}
     ##Transforma o arquivo de string em json
     ${product_json}=    Get Json Product   ${json_file}
 

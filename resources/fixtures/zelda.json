@@ -3,6 +3,6 @@
     "cat":          "Nintendo",
     "price":        "99.99",
     "desc":         "Fantazia e emoções....",
-    "producers":    "Nintendo",
-    "image":        "zelda.jpg"
+    "producers":    ["Nintendo"],
+    "file_name":    "zelda.jpg"
 }

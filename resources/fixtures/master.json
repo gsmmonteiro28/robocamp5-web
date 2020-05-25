@@ -3,6 +3,6 @@
     "cat":          "Consoles",
     "price":        "199.99",
     "desc":         "Com Alex Kid na memória!",
-    "producers":    "Saga",
-    "image":        "master2.jpg"
+    "producers":    ["Saga"],
+    "file_name":    "master2.jpg"
 }
