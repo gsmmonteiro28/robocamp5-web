@@ -17,7 +17,7 @@ Select category
     Click Element   css:input[placeholder^="Gat"]
     Wait Until Element Is Visible       xpath://li//span[text()="${cat}"]
     #seleciona o item dentro do campo categoria
-    Sleep   4
+    Sleep   2
     Click Element                       xpath://li//span[text()="${cat}"]
 
 Request Remove
@@ -26,7 +26,10 @@ Request Remove
     Click Element       xpath://tr[td//text()[contains(., '${title}')]]//button
 
 Confirm Remove
-    Click Element       Class:swal2-confirm
+    Click Element       class:swal2-confirm
+
+Cancel Remove
+    Click Element       class:swal2-cancel
   
 Create new product
     [Arguments]     ${product_json}

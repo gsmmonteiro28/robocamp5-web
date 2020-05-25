@@ -80,4 +80,24 @@ E confirmo a solicitação
 
 Então não devo ver este item no catálogo
     Wait Until Element Does Not Contain     class:table        ${product_json['title']}
+
+## Desistir da exclusão
+Dado que "${json_file}" é um produto desejvel
     
+    ${product_json}=    Get Json Product   ${json_file}
+
+    Remove Product By Title     ${product_json['title']}
+
+    Go To From
+    Create new product      ${product_json}
+    #Manter a variável ativa na memória até o final do teste Novo prodruto
+    Set Test Variable       ${product_json}
+
+Quando solicito a exclusão
+    Request Remove      ${product_json['title']}
+
+Mas cancelo a solicitação
+    Cancel Remove
+
+Então devo ver este item no catálogo
+    Wait Until Element Contains      class:table        ${product_json['title']}

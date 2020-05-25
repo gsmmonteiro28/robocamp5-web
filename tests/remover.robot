@@ -19,7 +19,8 @@ Apagar produtos
     Então não devo ver este item no catálogo
 
 Desistir da remoção
-    Dado que eu tenho o produto "zelda.json"
+    [Tags]      cancel_delete
+    Dado que "zelda.json" é um produto desejvel
     Quando solicito a exclusão
     Mas cancelo a solicitação
-    Então devo ver esse item na lista
+    Então devo ver este item no catálogo
