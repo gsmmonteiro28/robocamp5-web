@@ -20,7 +20,14 @@ Select category
     Sleep   4
     Click Element                       xpath://li//span[text()="${cat}"]
 
+Request Remove
+    [Arguments]     ${title}
     
+    Click Element       xpath://tr[td//text()[contains(., '${title}')]]//button
+
+Confirm Remove
+    Click Element       Class:swal2-confirm
+  
 Create new product
     [Arguments]     ${product_json}
 
@@ -31,3 +38,5 @@ Create new product
     Input Text      css:input[name=price]       ${product_json['price']} 
 
     Click Element       id:create-product
+
+    sleep       2

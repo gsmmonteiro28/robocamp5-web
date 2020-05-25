@@ -4,7 +4,6 @@ Documentation       Cadastro de produtos
 ...                 Quero cadastrar novos produtos
 ...                 Para que eu possa disponibiliza-los na loja virtual
 
-Library             OperatingSystem
 Resource            ../resources/actions.robot
 
 Suite Setup         Login Session   papito@ninjapixel.com   pwd123
